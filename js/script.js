@@ -17,3 +17,5 @@ for (let i = 0; i < 2; i++) {
     let ratingLastFilm = prompt('What is the rating of the last film?', '');
     movies[lastFilm] = ratingLastFilm;
 }
+
+console.log(movies, personalMovieDB);
