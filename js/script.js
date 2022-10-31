@@ -8,7 +8,6 @@ const personalMovieDB = {
     privat: false,
     rememberMyFilms: function() {
         for (let i = 0; i < 2; i++) {
-    
             const lastFilm = prompt('What is your last watched film?', ''),
                   ratingLastFilm = prompt('What is the rating of the last film?', '');
             
@@ -18,7 +17,6 @@ const personalMovieDB = {
                 console.log('Error');
                 i--;
             }
-        
         } 
     },
     detectPersonalLevel: function(){
@@ -41,13 +39,10 @@ const personalMovieDB = {
         let answer;
         for (let i = 1; i <= 3; i++) {
             answer = prompt(`What's is your favorite genre №${i}?`, '');
-            
             while(answer == null || answer == '') {
                 answer = prompt(`What's is your favorite genre №${i}?`, '');
             }
-
             personalMovieDB.genres.push(answer);
-
         }
         personalMovieDB.genres.forEach((el, i) => console.log(`The favorite genre${i+1} is ${el}`));
     },
@@ -55,15 +50,10 @@ const personalMovieDB = {
         this.privat = !this.privat;
     },
     start: function () {
-
-        let numberOfFilms = prompt('How many films do you watch?', '');
-
-        while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
-            numberOfFilms = prompt('How many films do you watch?', '');
+        personalMovieDB.count = prompt('How many films do you watch?', '');
+        while (personalMovieDB.count == '' || personalMovieDB.count == null || isNaN(personalMovieDB.count)) {
+            personalMovieDB.count = prompt('How many films do you watch?', '');
         }
-
-        personalMovieDB.count = numberOfFilms;
-
     },
 };
 
