@@ -1,7 +1,7 @@
 'use strict';
 
 const personalMovieDB = {
-    count: numberOfFilms,
+    count: 0,
     movies: {},
     actors: {},
     genres: [],
@@ -61,6 +61,8 @@ const personalMovieDB = {
         while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
             numberOfFilms = prompt('How many films do you watch?', '');
         }
+
+        personalMovieDB.count = numberOfFilms;
 
     },
 };
